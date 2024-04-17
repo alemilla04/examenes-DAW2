@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE empresa[
+        <!ELEMENT empresa (departamento+)>
+        <!ELEMENT departamento ((administracion|ventas|sistemas)+)>
+        <!ELEMENT administracion (puesto+)>
+        <!ELEMENT ventas (puesto+)>
+        <!ELEMENT sistemas (puesto+)>
+        <!ELEMENT puesto ((usuario|instalacion), registro_hardware)>
+        <!ELEMENT registro_hardware (hardware)>
+        <!ELEMENT hardware ((pc|periferico|red)+)>
+        <!ELEMENT pc EMPTY>
+        <!ELEMENT periferico EMPTY>
+        <!ELEMENT red EMPTY>
+        <!ATTLIST pc serie CDATA #REQUIRED>
+        <!ATTLIST pc marca CDATA #REQUIRED>
+        <!ATTLIST pc modelo CDATA #REQUIRED>
+        <!ATTLIST pc fecha_compra CDATA #REQUIRED>
+        <!ATTLIST periferico serie CDATA #REQUIRED>
+        <!ATTLIST periferico marca CDATA #REQUIRED>
+        <!ATTLIST periferico modelo CDATA #REQUIRED>
+        <!ATTLIST periferico fecha_compra CDATA #REQUIRED>
+        <!ATTLIST red serie CDATA #REQUIRED>
+        <!ATTLIST red marca CDATA #REQUIRED>
+        <!ATTLIST red modelo CDATA #REQUIRED>
+        <!ATTLIST red fecha_compra CDATA #REQUIRED>
+        <!ATTLIST puesto numero ID #REQUIRED>
+        <!ELEMENT usuario EMPTY>
+        <!ELEMENT instalacion EMPTY>
+]>
+
+<empresa>
+    <departamento>
+        <ventas>
+            <puesto numero="P1">
+                <usuario />
+                <registro_hardware>
+                    <hardware>
+                        <pc serie="1001XYZ" marca="Lenovo X1" modelo="Lenovo X1" fecha_compra="01/01/2024" />
+                        <periferico serie="2001XYZ" marca="DEL 24 pulgadas" modelo="DEL 24 pulgadas" fecha_compra="01/01/2024" />
+                    </hardware>
+                </registro_hardware>
+            </puesto>
+            <puesto numero="P2">
+                <usuario />
+                <registro_hardware>
+                    <hardware>
+                        <pc serie="1002XYZ" marca="Lenovo X2" modelo="Lenovo X2" fecha_compra="01/01/2024" />
+                        <periferico serie="2002XYZ" marca="DEL 26 pulgadas" modelo="DEL 26 pulgadas" fecha_compra="01/01/2024" />
+                    </hardware>
+                </registro_hardware>
+            </puesto>
+        </ventas>
+        <sistemas>
+            <puesto numero="I3">
+                <instalacion />
+                <registro_hardware>
+                    <hardware>
+                        <red serie="3001XYZ" marca="Cisco 2900" modelo="Cisco 2900" fecha_compra="01/01/2024" />
+                    </hardware>
+                </registro_hardware>
+            </puesto>
+        </sistemas>
+    </departamento>
+</empresa>

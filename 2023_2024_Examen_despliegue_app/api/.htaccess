@@ -1,0 +1,7 @@
+
+RewriteEngine On
+RewriteBase RUTA
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)$ ARCHIVO_DESTINO [QSA,L]
